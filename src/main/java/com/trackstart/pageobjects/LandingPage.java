@@ -35,7 +35,7 @@ public class LandingPage {
 		for (int i = 1; i <= 4; i++) {
 			driver.get("https://www.trakstar.com/pricing/");
 			
-			//this is a coment
+			
 
 			try {
 				String noOfEmployeesValue = Excel_Reader.getCellData(".\\src\\test\\resources\\TestData\\Prices.xlsx",
@@ -62,35 +62,12 @@ public class LandingPage {
 				// String annualSubscriptionValue =
 				// Excel_Reader.getCellData(".\\src\\test\\resources\\TestData\\Prices.xlsx",
 				// "PricesAndFeatures", i, 4);
-/*
-				System.out.println("The Value is " + noOfEmployeesValue + " " + performanceManagementFeature + "   "
-						+ successionPlanningFeature + "   " + employeeEngagementFeature + "  "
-						+ applicantTrackingFeature);
-				System.out.println("The Value is " + " " + performanceManagementExpectedValue + "   "
-						+ successionPlanningExpectedValue + "   " + employeeEngagementExpectedValue + "  "
-						+ applicantTrackingExpectedValue + "  " + annualSubscriptionExpectedValue);*/
 
 				driver.findElement(noOfEmployees).sendKeys(noOfEmployeesValue);
-			  driver.findElement(employeeEngagementChkBox).click();
-			driver.findElement(applicationTrackingChkBox).click();
-				/*System.out.println(driver.findElement(performanceManagementQuote).getText());
-				System.out.println(driver.findElement(successionPlanningQuote).getText());
-				System.out.println(driver.findElement(employeeEngagement).getText());
-				System.out.println(driver.findElement(applicantTracking).getText());
-				System.out.println(driver.findElement(annualSubscription).getText());
-
-				System.out.println(driver.findElement(performanceManagementQuote).getText()
-						.equalsIgnoreCase("$" + performanceManagementExpectedValue));
-				System.out.println(driver.findElement(successionPlanningQuote).getText()
-						.equalsIgnoreCase("$" + successionPlanningExpectedValue));
-				System.out.println(driver.findElement(employeeEngagement).getText()
-						.equalsIgnoreCase("$" + employeeEngagementExpectedValue));
-
-				System.out.println(driver.findElement(applicantTracking).getText()
-						.equalsIgnoreCase("$" + applicantTrackingExpectedValue));
-				System.out.println(driver.findElement(annualSubscription).getText()
-						.equalsIgnoreCase("$" + annualSubscriptionExpectedValue));
-*/				if (noOfEmployeesValue.equalsIgnoreCase("25")) {
+			    driver.findElement(employeeEngagementChkBox).click();
+			    driver.findElement(applicationTrackingChkBox).click();
+			
+          			if (noOfEmployeesValue.equalsIgnoreCase("25")) {
 					if (performanceManagementFeature.equalsIgnoreCase("yes")) {
 						boolean result = driver.findElement(performanceManagementQuote).getText()
 								.equalsIgnoreCase("$" + performanceManagementExpectedValue);
@@ -180,23 +157,6 @@ public class LandingPage {
 					assertEquals(true, driver.findElement(contactUs).isDisplayed());
 				}
 
-System.out.println(driver.findElement(performanceManagementQuote).getText());
-System.out.println(driver.findElement(successionPlanningQuote).getText());
-System.out.println(driver.findElement(employeeEngagement).getText());
-System.out.println(driver.findElement(applicantTracking).getText());
-System.out.println(driver.findElement(annualSubscription).getText());
-
-System.out.println(driver.findElement(performanceManagementQuote).getText()
-		.equalsIgnoreCase("$" + performanceManagementExpectedValue));
-System.out.println(driver.findElement(successionPlanningQuote).getText()
-		.equalsIgnoreCase("$" + successionPlanningExpectedValue));
-System.out.println(driver.findElement(employeeEngagement).getText()
-		.equalsIgnoreCase("$" + employeeEngagementExpectedValue));
-
-System.out.println(driver.findElement(applicantTracking).getText()
-		.equalsIgnoreCase("$" + applicantTrackingExpectedValue));
-System.out.println(driver.findElement(annualSubscription).getText()
-		.equalsIgnoreCase("$" + annualSubscriptionExpectedValue));
 
 			} catch (Exception e1) {
 				// TODO Auto-generated catch block
