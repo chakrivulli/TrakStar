@@ -10,7 +10,7 @@ import com.trackstart.utilityclasses.DriverClass;
 
 public class TestClass {
 	WebDriver driver;
-
+//launching browser
 	@BeforeSuite
 	public void setUp() {
 		driver = DriverClass.getDriver("chrome");
